@@ -12,6 +12,8 @@ import { cn } from "@/lib/utils";
 import { CircleUser, Menu, Package2 } from "lucide-react";
 import { Code } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
+import { navItems } from "../App";
+
 const Layout = () => {
   return (
     <div className="flex min-h-screen w-full flex-col">
