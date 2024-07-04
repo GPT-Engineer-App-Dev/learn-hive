@@ -7,6 +7,7 @@ import Layout from "./layouts/navbar";
 import Index from "./pages/Index.jsx";
 import Courses from "./pages/Courses.jsx";
 import CourseDetail from "./pages/CourseDetail.jsx";
+import CodeEditor from "./pages/CodeEditor.jsx";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,7 @@ const App = () => {
               <Route index element={<Index />} />
               <Route path="courses" element={<Courses />} />
               <Route path="courses/:id" element={<CourseDetail />} />
+              <Route path="code-editor" element={<CodeEditor />} />
               {/* Add more routes here as needed */}
             </Route>
           </Routes>
