@@ -1,6 +1,26 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+import { toast } from "sonner";
 
 const CourseDetail = () => {
+  const [isEnrolled, setIsEnrolled] = useState(false);
+
+  const handleEnroll = () => {
+    setIsEnrolled(true);
+    toast.success("You have successfully enrolled in the course!");
+  };
+
   return (
     <div className="p-4">
       <div className="course-header mb-6">
@@ -18,7 +38,29 @@ const CourseDetail = () => {
           <li>Lesson 3</li>
         </ul>
       </div>
-      <Button variant="primary" size="lg">Enroll Now</Button>
+      {isEnrolled ? (
+        <Button variant="secondary" size="lg" disabled>
+          Enrolled
+        </Button>
+      ) : (
+        <AlertDialog>
+          <AlertDialogTrigger asChild>
+            <Button variant="primary" size="lg">Enroll Now</Button>
+          </AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Confirm Enrollment</AlertDialogTitle>
+              <AlertDialogDescription>
+                Are you sure you want to enroll in this course?
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogAction onClick={handleEnroll}>Confirm</AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+      )}
     </div>
   );
 };
