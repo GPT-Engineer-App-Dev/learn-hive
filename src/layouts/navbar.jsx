@@ -9,10 +9,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2, Code } from "lucide-react";
+import { CircleUser, Menu, Package2 } from "lucide-react";
+import { Code } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
-
 const Layout = () => {
   return (
     <div className="flex min-h-screen w-full flex-col">
@@ -27,15 +26,6 @@ const Layout = () => {
     </div>
   );
 };
-
-const navItems = [
-  {
-    title: "Code Editor",
-    to: "/code-editor",
-    icon: <Code className="h-4 w-4" />,
-  },
-  // other nav items
-];
 
 const DesktopNav = () => (
   <nav className="hidden md:flex md:items-center md:gap-5 lg:gap-6 text-lg font-medium md:text-sm">

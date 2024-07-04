@@ -31,15 +31,6 @@ const Layout = () => {
   );
 };
 
-const navItems = [
-  {
-    title: "Code Editor",
-    to: "/code-editor",
-    icon: <Code className="h-4 w-4" />,
-  },
-  // other nav items
-];
-
 const Sidebar = () => (
   <div className="hidden border-r bg-muted/40 md:block">
     <div className="flex h-full max-h-screen flex-col gap-2">
